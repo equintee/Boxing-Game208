@@ -5,16 +5,22 @@ using UnityEngine;
 
 public class trapController : MonoBehaviour
 {
-    private int value;
-    public int operation; //0: +, 1: -, 2: x, 3: /
+    public int value;
+    public int operation; //0: +, 1: -, 2: x, 3: ÷
+    private bool isTriggered = false;
 
     [SerializeField]
     private TextMeshProUGUI _text;
+
+    private static playerController _playerController;
+   
     void Start()
     {
         value = Random.Range(1, 6);
         operation = Random.Range(0, 4);
         changeText();
+
+        _playerController = GameObject.FindGameObjectWithTag("eventSystem").GetComponent<playerController>();
     }
 
     private void changeText()
@@ -44,4 +50,33 @@ public class trapController : MonoBehaviour
        
     }
 
+
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (!isTriggered)
+        {
+            isTriggered = true;
+        }
+        else return;
+        int playerLevel = playerController.level;
+
+        switch (operation)
+        {
+            case 0:
+                playerLevel += value;
+                break;
+            case 1:
+                playerLevel = playerLevel - value > 0 ? playerLevel - value : 0;
+                break;
+            case 2:
+                playerLevel *= value;
+                break;
+            case 3:
+                playerLevel /= value;
+                break;
+        }
+        playerController.level = playerLevel;
+        playerController.UpdateLevelText();
+    }
 }
