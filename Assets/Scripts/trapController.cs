@@ -12,15 +12,15 @@ public class trapController : MonoBehaviour
     [SerializeField]
     private TextMeshProUGUI _text;
 
-    private static playerController _playerController;
+    private static gameController _playerController;
    
     void Start()
     {
-        value = Random.Range(1, 6);
+        value = Random.Range(1, 20);
         operation = Random.Range(0, 4);
         changeText();
 
-        _playerController = GameObject.FindGameObjectWithTag("eventSystem").GetComponent<playerController>();
+        _playerController = GameObject.FindGameObjectWithTag("eventSystem").GetComponent<gameController>();
     }
 
     private void changeText()
@@ -54,12 +54,8 @@ public class trapController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (!isTriggered)
-        {
-            isTriggered = true;
-        }
-        else return;
-        int playerLevel = playerController.level;
+        
+        int playerLevel = gameController.level;
 
         switch (operation)
         {
@@ -76,7 +72,7 @@ public class trapController : MonoBehaviour
                 playerLevel /= value;
                 break;
         }
-        playerController.level = playerLevel;
-        playerController.UpdateLevelText();
+        gameController.level = playerLevel;
+        gameController.UpdateLevelText();
     }
 }
