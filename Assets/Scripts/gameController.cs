@@ -26,10 +26,10 @@ public class gameController : MonoBehaviour
         UpdateLevelText();
 
         bossLevel = Random.Range(1, 100);
-        bossTextUpdater();
+        //bossTextUpdater();
 
         playerFinishLineStanding = boss.transform.localPosition - playerFinishLineStandingPointOffset;
-        playerFinishLineStanding.y = 0.5f;
+        playerFinishLineStanding.y = -25f;
         gamePhase++;
     }
 
