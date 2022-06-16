@@ -1485,11 +1485,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: f1010309ad8aa6442b0a8f5756438ef8,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< Updated upstream
-      value: 3
-=======
       value: 6
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: f1010309ad8aa6442b0a8f5756438ef8,
         type: 3}
@@ -2399,11 +2395,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 26dd7dbc204c38b408fbf2d6654f77bc,
         type: 3}
       propertyPath: m_RootOrder
-<<<<<<< Updated upstream
-      value: 4
-=======
       value: 5
->>>>>>> Stashed changes
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26dd7dbc204c38b408fbf2d6654f77bc,
         type: 3}
