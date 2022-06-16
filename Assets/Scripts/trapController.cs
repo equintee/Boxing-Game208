@@ -55,7 +55,7 @@ public class trapController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         
-        int playerLevel = gameController.level;
+        int playerLevel = gameController.playerLevel;
 
         switch (operation)
         {
@@ -72,7 +72,7 @@ public class trapController : MonoBehaviour
                 playerLevel /= value;
                 break;
         }
-        gameController.level = playerLevel;
+        gameController.playerLevel = playerLevel;
         gameController.UpdateLevelText();
     }
 }
