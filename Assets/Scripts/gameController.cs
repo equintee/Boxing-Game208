@@ -4,6 +4,7 @@ using UnityEngine;
 using TMPro;
 using DG.Tweening;
 using System.Threading.Tasks;
+using PathCreation;
 
 [System.Serializable]
 public struct GameObjects
@@ -43,6 +44,8 @@ public class gameController : MonoBehaviour
 
     public Vector3 playerFinishLineStandingPointOffset;
     private Vector3 playerFinishLineStanding;
+
+    public PathCreator pathCreator;
     private void Start()
     {
         _playerLevelText = gameObjects.player.transform.Find("Canvas").transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
@@ -58,10 +61,21 @@ public class gameController : MonoBehaviour
     }
 
     public static bool gameEnded = false;
+    float distanceTraveled;
+    public float animationSpeed = 5;
+    private bool hitAnimation = false;
     void Update()
     {
         if (gamePhase == 1) gamePhase1();
-        
+        if (playerWin && hitAnimation)
+        {
+            Camera.main.transform.parent = null;
+            distanceTraveled += animationSpeed * Time.deltaTime;
+            gameObjects.player.transform.position = pathCreator.path.GetPointAtDistance(distanceTraveled, EndOfPathInstruction.Stop);
+            gameObjects.player.transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTraveled, EndOfPathInstruction.Stop);
+            
+            Debug.Log("Dene");
+        }
         
     }
     public void bossTextUpdater()
@@ -136,7 +150,7 @@ public class gameController : MonoBehaviour
         gamePhase++;
     }
 
-    public async void playWinningAnimation()
+   /* public async void playWinningAnimation()
     {
         endingButton.SetActive(false);
         gameObjects.player.transform.DOMove(GameObject.Find("bossFace").transform.position, 0.3f);
@@ -144,21 +158,36 @@ public class gameController : MonoBehaviour
         gameObjects.player.transform.DOLocalMove(playerFinishLineStanding, 0.5f);
         GameObject.Find("bossLevelText").SetActive(false);
         setAnimationTrigger(gameObjects.boss, "playerWin");
+    }*/
+
+    public async void playWinningAnimation()
+    {
+        endingButton.SetActive(false);
+        hitAnimation = true;
     }
 
-    private void setAnimationTrigger(GameObject gameObject, string triggerName)
+    public void setAnimationTrigger(GameObject gameObject, string triggerName)
     {
         gameObject.GetComponent<Animator>().SetTrigger(triggerName);
     }
 
     public void buttonClicked()
     {
-        if (playerWin)
+        /*if (playerWin)
         {
             endingButton.SetActive(false);
             playWinningAnimation();
-        }
+        }*/
         
     }
 
+    public void setHitAnimation(bool flag)
+    {
+        hitAnimation = flag;
+    }
+
+    public Vector3 getFinishLineStanding()
+    {
+        return playerFinishLineStanding;
+    }
 }   

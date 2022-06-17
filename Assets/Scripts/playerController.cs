@@ -12,5 +12,7 @@ public class playerController : MonoBehaviour
         {
             other.transform.parent.GetComponent<Animator>().SetTrigger("bossWin");
         }
+
+        
     }
 }
