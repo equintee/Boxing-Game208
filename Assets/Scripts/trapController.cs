@@ -7,7 +7,6 @@ public class trapController : MonoBehaviour
 {
     public int value;
     public int operation; //0: +, 1: -, 2: x, 3: ÷
-    private bool isTriggered = false;
 
     [SerializeField]
     private TextMeshProUGUI _text;
@@ -63,7 +62,7 @@ public class trapController : MonoBehaviour
                 playerLevel += value;
                 break;
             case 1:
-                playerLevel = playerLevel - value > 0 ? playerLevel - value : 0;
+                playerLevel = playerLevel - value > 0 ? playerLevel - value : 0; // Player level cannot be below 0.
                 break;
             case 2:
                 playerLevel *= value;

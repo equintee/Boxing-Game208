@@ -2119,9 +2119,9 @@ MonoBehaviour:
     vertical: 20
   endingButton: {fileID: 1206896645}
   bossLevel: 0
-  playerFinishLineStandingPointOffset: {x: 0, y: 0, z: 10}
+  playerFinishLineStandingPointOffset: {x: 0, y: -6, z: 10}
   pathCreator: {fileID: 1418879790}
-  animationSpeed: 0.2
+  hitAnimationSpeed: 5
   playerWin: 0
 --- !u!114 &1015217196
 MonoBehaviour:
@@ -3945,8 +3945,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 1, y: 3.272507, z: 1.4079546}
+  m_Center: {x: 2.4060086e-12, y: -1.1362532, z: 0.20397753}
 --- !u!23 &1930292667
 MeshRenderer:
   m_ObjectHideFlags: 0

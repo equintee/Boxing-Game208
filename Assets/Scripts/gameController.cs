@@ -25,8 +25,6 @@ public struct Speed
 public class gameController : MonoBehaviour
 {
     public static int gamePhase = 0; //0 game initialization, 1 gameplay, 2 boss fight
-    //public float horizantalSpeed = 0.35f;
-    //public float verticalSpeed = 1f;
     public static int playerLevel = 1;
 
 
@@ -42,6 +40,7 @@ public class gameController : MonoBehaviour
     [SerializeField]
     private static TextMeshProUGUI _playerLevelText;
 
+    //Player standing offset from Boss
     public Vector3 playerFinishLineStandingPointOffset;
     private Vector3 playerFinishLineStanding;
 
@@ -55,14 +54,13 @@ public class gameController : MonoBehaviour
         bossTextUpdater();
 
         playerFinishLineStanding = gameObjects.boss.transform.localPosition - playerFinishLineStandingPointOffset;
-        playerFinishLineStanding.y = -25f;
 
         gamePhase++;
     }
 
-    public static bool gameEnded = false;
-    float distanceTraveled;
-    public float animationSpeed = 5;
+    
+    private float distanceTraveled;
+    public float hitAnimationSpeed = 5;
     private bool hitAnimation = false;
     void Update()
     {
@@ -70,26 +68,25 @@ public class gameController : MonoBehaviour
         if (playerWin && hitAnimation)
         {
             Camera.main.transform.parent = null;
-            distanceTraveled += animationSpeed * Time.deltaTime;
+            distanceTraveled += hitAnimationSpeed * Time.deltaTime;
             gameObjects.player.transform.position = pathCreator.path.GetPointAtDistance(distanceTraveled, EndOfPathInstruction.Stop);
             gameObjects.player.transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTraveled, EndOfPathInstruction.Stop);
             
-            Debug.Log("Dene");
         }
         
     }
-    public void bossTextUpdater()
+    public void bossTextUpdater() //Updates Boss level text. Called only once in Start().
     {
         TextMeshProUGUI _bossLevelText = GameObject.Find("bossLevelText").GetComponent<TextMeshProUGUI>();
         _bossLevelText.text = "<size=100%>" + bossLevel.ToString() + "<size=60%> LEVEL";
     }
-    public static void UpdateLevelText()
+    public static void UpdateLevelText() //Updates Player level text.
     {
         _playerLevelText.text = "<size=100%>" + playerLevel.ToString() + "<size=60%> LEVEL";
     }
 
-    float _touchBoarder;
-    private void gamePhase1()
+    private float _touchBoarder;
+    private void gamePhase1() //Gameplay input handeler.
     {
         Touch _touch;
 
@@ -98,14 +95,15 @@ public class gameController : MonoBehaviour
         if (Input.touchCount > 0)
         {
             _touch = Input.GetTouch(0);
-            _touchBoarder = gameObjects.player.transform.position.x + _touch.deltaPosition.x * (speedParameters.horizantal * Time.deltaTime);
+            _touchBoarder = gameObjects.player.transform.position.x + _touch.deltaPosition.x * (speedParameters.horizantal * Time.deltaTime); //Moving piece verticly in a desired speed constantly.
 
             if (_touch.phase == TouchPhase.Moved)
             {
-                gameObjects.player.transform.position = new Vector3(_touchBoarder, gameObjects.player.transform.position.y, gameObjects.player.transform.position.z);
+                gameObjects.player.transform.position = new Vector3(_touchBoarder, gameObjects.player.transform.position.y, gameObjects.player.transform.position.z); //Handling horizantal movement using inputs from user.
 
             }
 
+            //Prevents Player to move outside of platform.
             if (gameObjects.player.transform.position.x < -4.5f)
             {
                 gameObjects.player.transform.position = new Vector3(-4.5f, gameObjects.player.transform.position.y, gameObjects.player.transform.position.z);
@@ -117,50 +115,36 @@ public class gameController : MonoBehaviour
         }
     }
 
-    private float deltaTime = 0;
+    [HideInInspector]
     public bool playerWin = false;
-    public async void gamePhase2()
+    public async void gamePhase2() //Boss fight phase.
     {
-        Debug.Log("qweqwe");
-        gameEnded = false;
+        //Move Player to ring and wait 1 second to make calculations.
         gameObjects.player.transform.DOLocalMove(playerFinishLineStanding, 1f);
         await Task.Delay(System.TimeSpan.FromSeconds(1f));
         endingButton.SetActive(true);
 
         
 
-        if (playerLevel >= bossLevel)
-        {
-            Debug.Log("player win");
-            playerWin = true;
-        }
+        if (playerLevel >= bossLevel) playerWin = true; //Player wins if has higher level than Boss.
         else
         {
+            //Boss waits than hits the Player.
             float waitTime = Random.Range(0.1f, 1f);
             await Task.Delay(System.TimeSpan.FromSeconds(waitTime));
             endingButton.SetActive(false);
             gameObjects.boss.GetComponent<Animator>().SetBool("bossWin", true);
             await Task.Delay(System.TimeSpan.FromSeconds(1f));
             gameObjects.boss.GetComponent<Animator>().SetBool("bossWin", false);
-            Camera.main.transform.parent = null;
-            gameObjects.player.transform.DOLocalMoveX(75f, 1f);
+            Camera.main.transform.parent = null; //Since camera is a child of Player object initally, I had to detach it from Player otherwise camera moves along with the player.
+            gameObjects.player.transform.DOLocalMoveX(75f, 1f); //Animation that plays when boss hits the player.
 
         }
 
         gamePhase++;
     }
 
-   /* public async void playWinningAnimation()
-    {
-        endingButton.SetActive(false);
-        gameObjects.player.transform.DOMove(GameObject.Find("bossFace").transform.position, 0.3f);
-        await Task.Delay(System.TimeSpan.FromSeconds(0.3f));
-        gameObjects.player.transform.DOLocalMove(playerFinishLineStanding, 0.5f);
-        GameObject.Find("bossLevelText").SetActive(false);
-        setAnimationTrigger(gameObjects.boss, "playerWin");
-    }*/
-
-    public async void playWinningAnimation()
+    public void playWinningAnimation()
     {
         endingButton.SetActive(false);
         hitAnimation = true;
@@ -169,16 +153,6 @@ public class gameController : MonoBehaviour
     public void setAnimationTrigger(GameObject gameObject, string triggerName)
     {
         gameObject.GetComponent<Animator>().SetTrigger(triggerName);
-    }
-
-    public void buttonClicked()
-    {
-        /*if (playerWin)
-        {
-            endingButton.SetActive(false);
-            playWinningAnimation();
-        }*/
-        
     }
 
     public void setHitAnimation(bool flag)
