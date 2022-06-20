@@ -26,7 +26,7 @@ public class gameController : MonoBehaviour
 {
     public static int gamePhase = 0; //0 game initialization, 1 gameplay, 2 boss fight
     public static int playerLevel = 1;
-
+    public int coin;
 
     [SerializeField]
     public GameObjects gameObjects;
@@ -55,6 +55,15 @@ public class gameController : MonoBehaviour
 
         playerFinishLineStanding = gameObjects.boss.transform.localPosition - playerFinishLineStandingPointOffset;
 
+        if (PlayerPrefs.HasKey("coin"))
+        {
+            coin = PlayerPrefs.GetInt("coin");
+        }
+        else
+        {
+            PlayerPrefs.SetInt("coin", 0);
+        }
+        Debug.Log("Player has " + coin.ToString() + " coins.");
         gamePhase++;
     }
 
