@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
-
+using TMPro;
 public class boxingMachineController : MonoBehaviour
 {
     [SerializeField]
@@ -12,12 +12,16 @@ public class boxingMachineController : MonoBehaviour
     [HideInInspector]
     public Vector3 playerBoxingMachineStandingPointOfset;
     public int value;
-    
+
+    [SerializeField]
+    private TextMeshProUGUI _boxingMachineValueText;
     void Start()
     {
         value = Random.Range(0, 101);
         playerBoxingMachineStandingPointOfset = calculatePlayerBoxingMachineStandingPoint();
         Debug.Log(playerBoxingMachineStandingPointOfset.ToString());
+
+        _boxingMachineValueText.text = value.ToString();
     }
 
 

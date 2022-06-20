@@ -10,19 +10,7 @@ public class trapController : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI _text;
-
-    private static gameController _playerController;
-   
-    void Start()
-    {
-        value = Random.Range(1, 20);
-        operation = Random.Range(0, 4);
-        changeText();
-
-        _playerController = GameObject.FindGameObjectWithTag("eventSystem").GetComponent<gameController>();
-    }
-
-    private void changeText()
+    public void changeText()
     {
         string doorText = "";
 
@@ -53,7 +41,16 @@ public class trapController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
+        if (!other.CompareTag("Player")) return;
+
+        Transform parentTrap = transform.parent;
+        foreach(Transform childTrap in parentTrap)
+        {
+            childTrap.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+
+
         int playerLevel = gameController.playerLevel;
 
         switch (operation)

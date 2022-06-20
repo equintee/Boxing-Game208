@@ -8,6 +8,7 @@ public class finishLineScript : MonoBehaviour
     private gameController _gameController;
     private void OnTriggerEnter(Collider other)
     {
+        if (!other.CompareTag("Player")) return;
         gameController.gamePhase++;
         _gameController.gamePhase2();
     }

@@ -36,7 +36,7 @@ public class gameController : MonoBehaviour
     public GameObject endingButton;
 
     public int bossLevel;
-
+    public int bossHealth = 3;
     [SerializeField]
     private static TextMeshProUGUI _playerLevelText;
 
@@ -70,18 +70,9 @@ public class gameController : MonoBehaviour
     
     private float distanceTraveled;
     public float hitAnimationSpeed = 5;
-    private bool hitAnimation = false;
     void Update()
     {
         if (gamePhase == 1) gamePhase1();
-        if (playerWin && hitAnimation)
-        {
-            Camera.main.transform.parent = null;
-            distanceTraveled += hitAnimationSpeed * Time.deltaTime;
-            gameObjects.player.transform.position = pathCreator.path.GetPointAtDistance(distanceTraveled, EndOfPathInstruction.Stop);
-            gameObjects.player.transform.rotation = pathCreator.path.GetRotationAtDistance(distanceTraveled, EndOfPathInstruction.Stop);
-            
-        }
         
     }
     public void bossTextUpdater() //Updates Boss level text. Called only once in Start().
@@ -153,20 +144,22 @@ public class gameController : MonoBehaviour
         gamePhase++;
     }
 
+    private float buttonDelay;
     public void playWinningAnimation()
     {
-        endingButton.SetActive(false);
-        hitAnimation = true;
+        if (playerWin && buttonDelay + 3f < Time.time)
+        {
+            buttonDelay = Time.time;
+            int randomHand = Random.Range(0, 2);
+            GameObject hand = randomHand == 0 ? GameObject.Find("Boxing_Hand_Left_Hit_Anim") : GameObject.Find("Boxing_Hand_Right_Hit_Anim");
+            hand.GetComponent<Animator>().SetTrigger("hit");
+
+        }
     }
 
     public void setAnimationTrigger(GameObject gameObject, string triggerName)
     {
         gameObject.GetComponent<Animator>().SetTrigger(triggerName);
-    }
-
-    public void setHitAnimation(bool flag)
-    {
-        hitAnimation = flag;
     }
 
     public Vector3 getFinishLineStanding()
