@@ -4,51 +4,65 @@ using UnityEngine;
 
 public class doorContoller : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [System.Serializable]
+    public struct Boundries
+    {
+        public int minAddition;
+        public int maxAddition;
+        public int minMultiplication;
+        public int maxMultiplication;
+    }
+
+    [SerializeField]
+    public List<Boundries> _boundries = new List<Boundries>();
     void Start()
     {
+        int i = 0;
         foreach(Transform parentTrap in transform)
         {
+            Boundries doorBoundries = _boundries[i];
             GameObject leftTrap = parentTrap.Find("Left").gameObject;
             GameObject rightTrap = parentTrap.Find("Right").gameObject;
 
             int randomOperation = Random.Range(0, 4);
 
             leftTrap.GetComponent<trapController>().operation = randomOperation;
-            leftTrap.GetComponent<trapController>().value = generateRandomValue(randomOperation);
+            leftTrap.GetComponent<trapController>().value = generateRandomValue(randomOperation, doorBoundries);
 
             if(randomOperation % 2 == 0)
             {
                 randomOperation = Random.Range(0,2) == 1 ? 3 : 1;
                 rightTrap.GetComponent<trapController>().operation = randomOperation;
-                rightTrap.GetComponent<trapController>().value = generateRandomValue(randomOperation);
+                rightTrap.GetComponent<trapController>().value = generateRandomValue(randomOperation, doorBoundries);
             }
             else
             {
                 int temp = Random.Range(0, 2);
                 randomOperation = temp == 0 ? 0 : 2;
                 rightTrap.GetComponent<trapController>().operation = randomOperation;
-                rightTrap.GetComponent<trapController>().value = generateRandomValue(randomOperation);
+                rightTrap.GetComponent<trapController>().value = generateRandomValue(randomOperation, doorBoundries);
             }
 
             leftTrap.GetComponent<trapController>().changeText();
             rightTrap.GetComponent<trapController>().changeText();
+
+            i++;
         }
     }
 
 
-    public int generateRandomValue(int operation)
+    public int generateRandomValue(int operation, Boundries boundries)
     {
-        return operation > 1 ? generateMultiplicationDivisonValue() : generateAdditionSubstractionValue();
+        return operation > 1 ? generateMultiplicationDivisonValue(boundries.minMultiplication, boundries.maxMultiplication) : generateAdditionSubstractionValue(boundries.minAddition, boundries.maxAddition);
     }
-    private int generateMultiplicationDivisonValue()
+    private int generateMultiplicationDivisonValue(int min, int max)
     {
-        return Random.Range(1, 11);
+        return Random.Range(min, max + 1);
     }
 
-    private int generateAdditionSubstractionValue()
+    private int generateAdditionSubstractionValue(int min, int max)
     {
-        return Random.Range(5, 21);
+        return Random.Range(min, max + 1);
     }
 
 }
