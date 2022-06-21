@@ -11,13 +11,16 @@ public class boxingMachineController : MonoBehaviour
     public Vector3 hitOffset;
     [HideInInspector]
     public Vector3 playerBoxingMachineStandingPointOfset;
+    
+    public int minValue;
+    public int maxValue;
     public int value;
 
     [SerializeField]
     private TextMeshProUGUI _boxingMachineValueText;
     void Start()
     {
-        value = Random.Range(0, 101);
+        value = Random.Range(minValue, maxValue + 1);
         playerBoxingMachineStandingPointOfset = calculatePlayerBoxingMachineStandingPoint();
         Debug.Log(playerBoxingMachineStandingPointOfset.ToString());
 

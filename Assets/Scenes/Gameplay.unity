@@ -277,6 +277,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217794580baf1bf469b7cd3296036f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _boundries:
+  - minAddition: 1
+    maxAddition: 5
+    minMultiplication: 1
+    maxMultiplication: 3
+  - minAddition: 1
+    maxAddition: 5
+    minMultiplication: 1
+    maxMultiplication: 3
+  - minAddition: 1
+    maxAddition: 5
+    minMultiplication: 1
+    maxMultiplication: 3
+  - minAddition: 1
+    maxAddition: 5
+    minMultiplication: 1
+    maxMultiplication: 3
+  - minAddition: 1
+    maxAddition: 5
+    minMultiplication: 1
+    maxMultiplication: 3
 --- !u!1 &110499752 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2a5cf1e82a1813345b4bb948f56db9b7,
@@ -3290,6 +3311,8 @@ MonoBehaviour:
   _gameController: {fileID: 1015217195}
   hitOffset: {x: 0, y: -6, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
+  minValue: 10
+  maxValue: 20
   value: 0
   _boxingMachineValueText: {fileID: 1158127053}
 --- !u!1001 &1666689186
