@@ -458,7 +458,9 @@ MonoBehaviour:
   _gameController: {fileID: 2010838882}
   hitOffset: {x: 0, y: -6, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
-  value: 0
+  minValue: 20
+  maxValue: 22
+  value: 22
   _boxingMachineValueText: {fileID: 692930643}
 --- !u!1001 &187038486
 PrefabInstance:
@@ -1126,7 +1128,9 @@ MonoBehaviour:
   _gameController: {fileID: 2010838882}
   hitOffset: {x: 0, y: -6, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
-  value: 0
+  minValue: 10
+  maxValue: 15
+  value: 15
   _boxingMachineValueText: {fileID: 1786801138}
 --- !u!114 &385986590
 MonoBehaviour:
@@ -1200,6 +1204,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 217794580baf1bf469b7cd3296036f7f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _boundries:
+  - minAddition: 10
+    maxAddition: 15
+    minMultiplication: 5
+    maxMultiplication: 10
+  - minAddition: 20
+    maxAddition: 25
+    minMultiplication: 5
+    maxMultiplication: 10
+  - minAddition: 15
+    maxAddition: 14
+    minMultiplication: 6
+    maxMultiplication: 11
 --- !u!1001 &446736805
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1400,7 +1417,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 26dd7dbc204c38b408fbf2d6654f77bc,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 222.42601
+      value: 219.13
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26dd7dbc204c38b408fbf2d6654f77bc,
         type: 3}
@@ -2158,7 +2175,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 2a5cf1e82a1813345b4bb948f56db9b7,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.0018
+      value: -0.0009
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 2a5cf1e82a1813345b4bb948f56db9b7,
         type: 3}
@@ -3052,7 +3069,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1426499978}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.0019, y: -0.0289, z: -0}
+  m_LocalPosition: {x: -0.0008, y: -0.0289, z: -0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1629910724}
@@ -4728,7 +4745,7 @@ PrefabInstance:
     - target: {fileID: 6636333364311600944, guid: 15f317e8c2468a14cb6e5dfd22dcf1e0,
         type: 3}
       propertyPath: m_text
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636333364311600944, guid: 15f317e8c2468a14cb6e5dfd22dcf1e0,
         type: 3}
@@ -4868,7 +4885,7 @@ PrefabInstance:
     - target: {fileID: 6636333365424779389, guid: 15f317e8c2468a14cb6e5dfd22dcf1e0,
         type: 3}
       propertyPath: m_text
-      value: 12
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6636333365424779389, guid: 15f317e8c2468a14cb6e5dfd22dcf1e0,
         type: 3}
