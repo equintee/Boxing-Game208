@@ -24,7 +24,7 @@ public class boxingMachineFinishLineController : MonoBehaviour
         hand.GetComponent<Animator>().SetTrigger("hit");
 
         
-        await Task.Delay(System.TimeSpan.FromSeconds(2.1f));
+        await Task.Delay(System.TimeSpan.FromSeconds(0.7f));
         _gameController.gameObjects.player.transform.DOLocalMoveY(-30.31f, 1f);
         await Task.Delay(System.TimeSpan.FromSeconds(1f));
 
