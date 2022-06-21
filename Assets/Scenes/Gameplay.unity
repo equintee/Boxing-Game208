@@ -600,9 +600,9 @@ MonoBehaviour:
   m_UiScaleMode: 0
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
-  m_MatchWidthOrHeight: 0
+  m_MatchWidthOrHeight: 1
   m_PhysicalUnit: 3
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
@@ -1074,9 +1074,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540362391}
-  m_LocalRotation: {x: -0, y: -0.9976632, z: -0.068324305, w: 0}
+  m_LocalRotation: {x: -0, y: -0.9976632, z: -0.06832428, w: 0}
   m_LocalPosition: {x: 0, y: 0.0068272534, z: 0.13370481}
-  m_LocalScale: {x: 0.019999973, y: 0.019999987, z: 0.019999992}
+  m_LocalScale: {x: 0.019999973, y: 0.019999987, z: 0.01999999}
   m_Children: []
   m_Father: {fileID: 543450653354252177}
   m_RootOrder: 0
@@ -1600,6 +1600,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _boxingMachineController: {fileID: 1663500539}
+  ballClosingTime: 0.5
+  shakeTime: 0.4
+  shakeAngle: 10
 --- !u!65 &757197908
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2481,7 +2484,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 26dd7dbc204c38b408fbf2d6654f77bc,
         type: 3}
       propertyPath: m_RootOrder
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 26dd7dbc204c38b408fbf2d6654f77bc,
         type: 3}
@@ -3309,7 +3312,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameController: {fileID: 1015217195}
-  hitOffset: {x: 0, y: -6, z: 9}
+  hitOffset: {x: 0, y: -6, z: 8}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
   minValue: 10
   maxValue: 20
@@ -3325,7 +3328,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 989a94f98a2a8de4bbff8149944e0777,
         type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 989a94f98a2a8de4bbff8149944e0777,
         type: 3}
