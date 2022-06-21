@@ -7,13 +7,13 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-<<<<<<< HEAD
+      name: 
+    second: {instanceID: 0}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
       name: Boxing_Machine_Red
     second: {fileID: 2100000, guid: a341601ddbf36fe49ab9f790e8dd6e03, type: 2}
-=======
-      name: Boxing_Machine_Brown
-    second: {instanceID: 0}
->>>>>>> 85a5f1c44fd791cbcf9675759edddfcf266667f3
   materials:
     materialImportMode: 2
     materialName: 0
@@ -95,11 +95,7 @@ ModelImporter:
     armStretch: 0.05
     legStretch: 0.05
     feetSpacing: 0
-<<<<<<< HEAD
     globalScale: 50
-=======
-    globalScale: 0.5
->>>>>>> 85a5f1c44fd791cbcf9675759edddfcf266667f3
     rootMotionBoneName: 
     hasTranslationDoF: 0
     hasExtraRoot: 0

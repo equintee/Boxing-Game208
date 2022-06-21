@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameController: {fileID: 2010838882}
-  hitOffset: {x: 0, y: -6, z: 10}
+  hitOffset: {x: 0, y: -2, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
   minValue: 0
   maxValue: 0
@@ -766,7 +766,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: eee6a5e9d2cbfb740b87a7bb2b214cbb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.23
+      value: 29.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eee6a5e9d2cbfb740b87a7bb2b214cbb,
         type: 3}
@@ -2977,7 +2977,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: eee6a5e9d2cbfb740b87a7bb2b214cbb,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -34.23
+      value: -29.75
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eee6a5e9d2cbfb740b87a7bb2b214cbb,
         type: 3}
@@ -3062,7 +3062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameController: {fileID: 2010838882}
-  hitOffset: {x: 0, y: -6, z: 10}
+  hitOffset: {x: 0, y: -2, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
   minValue: 0
   maxValue: 0
