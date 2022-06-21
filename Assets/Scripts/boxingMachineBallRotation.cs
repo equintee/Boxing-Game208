@@ -7,6 +7,7 @@ public class boxingMachineBallRotation : MonoBehaviour
 {
     [SerializeField]
     private boxingMachineController _boxingMachineController;
+
     private void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("playerHand")) return;
@@ -15,9 +16,15 @@ public class boxingMachineBallRotation : MonoBehaviour
 
         if(gameController.playerLevel >= _boxingMachineController.value)
         {
+            Debug.Log("zort");
             int coin = PlayerPrefs.GetInt("coin");
             coin += _boxingMachineController.value;
             PlayerPrefs.SetInt("coin", coin);
+        }
+        else
+        {
+            Debug.Log("sapsal");
+            other.transform.parent.gameObject.GetComponent<Animator>().SetTrigger("damage");
         }
 
     }
