@@ -7,23 +7,10 @@ public class trapController : MonoBehaviour
 {
     public int value;
     public int operation; //0: +, 1: -, 2: x, 3: ÷
-    private bool isTriggered = false;
 
     [SerializeField]
     private TextMeshProUGUI _text;
-
-    private static gameController _playerController;
-   
-    void Start()
-    {
-        value = Random.Range(1, 20);
-        operation = Random.Range(0, 4);
-        changeText();
-
-        _playerController = GameObject.FindGameObjectWithTag("eventSystem").GetComponent<gameController>();
-    }
-
-    private void changeText()
+    public void changeText()
     {
         string doorText = "";
 
@@ -54,7 +41,16 @@ public class trapController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+
+        if (!other.CompareTag("Player")) return;
+
+        Transform parentTrap = transform.parent;
+        foreach(Transform childTrap in parentTrap)
+        {
+            childTrap.gameObject.GetComponent<BoxCollider>().enabled = false;
+        }
+
+
         int playerLevel = gameController.playerLevel;
 
         switch (operation)
@@ -63,7 +59,7 @@ public class trapController : MonoBehaviour
                 playerLevel += value;
                 break;
             case 1:
-                playerLevel = playerLevel - value > 0 ? playerLevel - value : 0;
+                playerLevel = playerLevel - value > 0 ? playerLevel - value : 0; // Player level cannot be below 0.
                 break;
             case 2:
                 playerLevel *= value;
