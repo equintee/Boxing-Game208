@@ -18,6 +18,8 @@ public class boxingMachineController : MonoBehaviour
 
     [SerializeField]
     private TextMeshProUGUI _boxingMachineValueText;
+
+    public ParticleSystem hitParticle;
     void Start()
     {
         value = Random.Range(minValue, maxValue + 1);

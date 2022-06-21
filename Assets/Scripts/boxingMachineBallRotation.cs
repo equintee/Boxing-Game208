@@ -12,11 +12,14 @@ public class boxingMachineBallRotation : MonoBehaviour
     public float ballClosingTime;
     public float shakeTime;
     public float shakeAngle;
+
+
     private async void OnTriggerEnter(Collider other)
     {
         if (!other.CompareTag("playerHand")) return;
         GetComponent<BoxCollider>().enabled = false;
-        
+        _boxingMachineController.hitParticle.Play();
+        Invoke("disableBoxingMachine", 3 * shakeTime);
 
         if(gameController.playerLevel >= _boxingMachineController.value)
         {
@@ -37,5 +40,11 @@ public class boxingMachineBallRotation : MonoBehaviour
             
         }
 
+    }
+
+
+    private void disableBoxingMachine()
+    {
+        transform.parent.gameObject.SetActive(false);
     }
 }
