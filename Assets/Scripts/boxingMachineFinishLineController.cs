@@ -16,8 +16,8 @@ public class boxingMachineFinishLineController : MonoBehaviour
         if (!other.CompareTag("Player")) return;
         gameController.gamePhase = 5;
         GameObject player = _gameController.gameObjects.player;
-        player.transform.DOLocalMove(_boxingMachineController.playerBoxingMachineStandingPointOfset, 1f);
-        await Task.Delay(System.TimeSpan.FromSeconds(1.3f));
+        player.transform.DOLocalMove(_boxingMachineController.playerBoxingMachineStandingPointOfset, 0.5f);
+        await Task.Delay(System.TimeSpan.FromSeconds(0.6f));
 
         int randomHand = Random.Range(0,2);
         GameObject hand = randomHand == 0 ? GameObject.Find("Boxing_Hand_Left_Hit_Anim"): GameObject.Find("Boxing_Hand_Right_Hit_Anim"); //0:left, 1:right

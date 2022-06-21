@@ -147,7 +147,7 @@ public class gameController : MonoBehaviour
     private float buttonDelay;
     public void playWinningAnimation()
     {
-        if (playerWin && buttonDelay + 3f < Time.time)
+        if (playerWin && buttonDelay + 1f < Time.time)
         {
             buttonDelay = Time.time;
             int randomHand = Random.Range(0, 2);
