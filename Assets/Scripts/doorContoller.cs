@@ -15,6 +15,9 @@ public class doorContoller : MonoBehaviour
 
     [SerializeField]
     public List<Boundries> _boundries = new List<Boundries>();
+
+    [SerializeField]
+    public Material negativeMaterial;
     void Start()
     {
         int i = 0;
@@ -42,6 +45,14 @@ public class doorContoller : MonoBehaviour
                 rightTrap.GetComponent<trapController>().operation = randomOperation;
                 rightTrap.GetComponent<trapController>().value = generateRandomValue(randomOperation, doorBoundries);
             }
+
+
+            GameObject negativeTrap = randomOperation % 2 == 1 ? rightTrap : leftTrap;
+
+            Material[] negativeMaterials = negativeTrap.GetComponent<MeshRenderer>().materials;
+            negativeMaterials[0] = negativeMaterial;
+            negativeTrap.GetComponent<MeshRenderer>().materials = negativeMaterials;
+
 
             leftTrap.GetComponent<trapController>().changeText();
             rightTrap.GetComponent<trapController>().changeText();

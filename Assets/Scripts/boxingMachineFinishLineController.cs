@@ -13,7 +13,7 @@ public class boxingMachineFinishLineController : MonoBehaviour
 
     private async void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player")) return;
+        if (!other.CompareTag("Player") || gameController.playerLevel < _boxingMachineController.value ) return;
         gameController.gamePhase = 5;
         GameObject player = _gameController.gameObjects.player;
         player.transform.DOLocalMove(_boxingMachineController.playerBoxingMachineStandingPointOfset, 0.5f);
