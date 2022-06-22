@@ -86,11 +86,13 @@ public class gameController : MonoBehaviour
     }
 
     private float _touchBoarder;
+    [HideInInspector]
+    public bool isObjectStuck = false;
     private void gamePhase1() //Gameplay input handeler.
     {
         Touch _touch;
-
-        gameObjects.player.transform.position = new Vector3(gameObjects.player.transform.position.x, gameObjects.player.transform.position.y, gameObjects.player.transform.position.z + (speedParameters.vertical * Time.deltaTime));
+        if(!isObjectStuck)
+            gameObjects.player.transform.position = new Vector3(gameObjects.player.transform.position.x, gameObjects.player.transform.position.y, gameObjects.player.transform.position.z + (speedParameters.vertical * Time.deltaTime));
 
         if (Input.touchCount > 0)
         {
