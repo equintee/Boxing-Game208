@@ -20,6 +20,12 @@ public struct Speed
     public float vertical; //20f
 }
 
+[System.Serializable]
+public struct bounceParameters
+{
+    public float bounceRate;
+    public float bounceTime;
+}
 
 
 public class gameController : MonoBehaviour
@@ -32,6 +38,8 @@ public class gameController : MonoBehaviour
     public GameObjects gameObjects;
     [SerializeField]
     public Speed speedParameters;
+    [SerializeField]
+    public bounceParameters _bounceParameters;
 
     public GameObject endingButton;
 
