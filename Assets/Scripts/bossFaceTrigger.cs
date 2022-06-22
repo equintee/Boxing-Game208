@@ -29,11 +29,16 @@ public class bossFaceTrigger : MonoBehaviour
             _bossLevelCanvas.SetActive(false);
 
             _levelManager.incrementLevel();
+            _endingScreen.SetActive(false);
 
             await Task.Delay(System.TimeSpan.FromSeconds(1f));
 
             _levelManager.enableWinCanvas();
 
+        }
+        else
+        {
+            transform.parent.GetComponent<Animator>().SetTrigger("bossDamage");
         }
     }
 
