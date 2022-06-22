@@ -1331,8 +1331,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameController: {fileID: 2010838882}
-  bounceRate: 5
-  bounceTime: 1
 --- !u!1001 &613247076
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4987,6 +4985,9 @@ MonoBehaviour:
   speedParameters:
     horizantal: 0.35
     vertical: 20
+  _bounceParameters:
+    bounceRate: 5
+    bounceTime: 1
   endingButton: {fileID: 764859231}
   bossLevel: 0
   bossHealth: 3
