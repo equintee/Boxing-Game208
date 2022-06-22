@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Threading.Tasks;
 
 public class bossFaceTrigger : MonoBehaviour
 {
@@ -13,7 +14,11 @@ public class bossFaceTrigger : MonoBehaviour
 
     [SerializeField]
     private GameObject _endingScreen;
-    private void OnTriggerEnter(Collider other)
+
+    [SerializeField]
+    private levelManager _levelManager;
+
+    private async void OnTriggerEnter(Collider other)
     {
         _gameController.bossHealth--;
 
@@ -22,6 +27,15 @@ public class bossFaceTrigger : MonoBehaviour
             _gameController.setAnimationTrigger(_gameController.gameObjects.boss, "playerWin");
             _bossLevelCanvas.SetActive(false);
             _bossLevelCanvas.SetActive(false);
+
+            _levelManager.incrementLevel();
+
+            await Task.Delay(System.TimeSpan.FromSeconds(1f));
+
+            _levelManager.enableWinCanvas();
+
         }
     }
+
+
 }
