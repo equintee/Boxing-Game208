@@ -8,7 +8,8 @@ public class boxingMachineBallRotation : MonoBehaviour
 {
     [SerializeField]
     private boxingMachineController _boxingMachineController;
-
+    [SerializeField]
+    private gameController _gameController;
     public float ballClosingTime;
     public float shakeTime;
     public float shakeAngle;
@@ -21,7 +22,7 @@ public class boxingMachineBallRotation : MonoBehaviour
         _boxingMachineController.hitParticle.Play();
         //Invoke("disableBoxingMachine", 3 * shakeTime);
 
-        if(gameController.playerLevel >= _boxingMachineController.value)
+        if(_gameController.playerLevel >= _boxingMachineController.value)
         {
             transform.DOLocalRotate(new Vector3(90,0,0), ballClosingTime);
             Camera.main.transform.DOLocalRotate(new Vector3(-7.835f, -180, shakeAngle), shakeTime);

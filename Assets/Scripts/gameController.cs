@@ -30,10 +30,9 @@ public struct bounceParameters
 
 public class gameController : MonoBehaviour
 {
-    public static int gamePhase = 0; //0 game initialization, 1 gameplay, 2 boss fight
-    public static int playerLevel = 1;
+    public int gamePhase = 0; //0 game initialization, 1 gameplay, 2 boss fight
     public int coin;
-
+    public int playerLevel = 1;
     [SerializeField]
     public GameObjects gameObjects;
     [SerializeField]
@@ -75,8 +74,6 @@ public class gameController : MonoBehaviour
         gamePhase++;
     }
 
-    
-    private float distanceTraveled;
     public float hitAnimationSpeed = 5;
     void Update()
     {
@@ -88,7 +85,7 @@ public class gameController : MonoBehaviour
         TextMeshProUGUI _bossLevelText = GameObject.Find("bossLevelText").GetComponent<TextMeshProUGUI>();
         _bossLevelText.text = "<size=100%>" + bossLevel.ToString() + "<size=60%> LEVEL";
     }
-    public static void UpdateLevelText() //Updates Player level text.
+    public void UpdateLevelText() //Updates Player level text.
     {
         _playerLevelText.text = "<size=100%>" + playerLevel.ToString() + "<size=60%> LEVEL";
     }
