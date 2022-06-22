@@ -39,7 +39,9 @@ public class gameController : MonoBehaviour
     public Speed speedParameters;
     [SerializeField]
     public bounceParameters _bounceParameters;
-
+    [SerializeField]
+    private levelManager _levelManager;
+    
     public GameObject endingButton;
 
     public int bossLevel;
@@ -71,12 +73,13 @@ public class gameController : MonoBehaviour
             PlayerPrefs.SetInt("coin", 0);
         }
         Debug.Log("Player has " + coin.ToString() + " coins.");
-        gamePhase++;
+
     }
 
     public float hitAnimationSpeed = 5;
     void Update()
     {
+        if (gamePhase == 0) gamePhase0();
         if (gamePhase == 1) gamePhase1();
         
     }
@@ -145,6 +148,8 @@ public class gameController : MonoBehaviour
             gameObjects.boss.GetComponent<Animator>().SetBool("bossWin", false);
             Camera.main.transform.parent = null; //Since camera is a child of Player object initally, I had to detach it from Player otherwise camera moves along with the player.
             gameObjects.player.transform.DOLocalMoveX(75f, 1f); //Animation that plays when boss hits the player.
+            await Task.Delay(System.TimeSpan.FromSeconds(1f));
+            _levelManager.enableFailCanvas();
 
         }
 
@@ -172,5 +177,13 @@ public class gameController : MonoBehaviour
     public Vector3 getFinishLineStanding()
     {
         return playerFinishLineStanding;
+    }
+    public void gamePhase0()
+    {
+        if(Input.touchCount > 0)
+        {
+            _levelManager.disableTapToStart();
+            gamePhase++;
+        }
     }
 }   
