@@ -13,9 +13,9 @@ public class boxingMachineFinishLineController : MonoBehaviour
 
     private async void OnTriggerEnter(Collider other)
     {
-        if (!other.CompareTag("Player") || gameController.playerLevel < _boxingMachineController.value ) return;
+        if (!other.CompareTag("Player") || _gameController.playerLevel < _boxingMachineController.value ) return;
         GetComponent<BoxCollider>().enabled = false;
-        gameController.gamePhase = 5;
+        _gameController.gamePhase = 5;
         GameObject player = _gameController.gameObjects.player;
         player.transform.DOLocalMove(_boxingMachineController.playerBoxingMachineStandingPointOfset, 0.5f);
         await Task.Delay(System.TimeSpan.FromSeconds(0.6f));
@@ -29,6 +29,6 @@ public class boxingMachineFinishLineController : MonoBehaviour
         _gameController.gameObjects.player.transform.DOLocalMoveY(-30.31f, 1f);
         await Task.Delay(System.TimeSpan.FromSeconds(1f));
 
-        gameController.gamePhase = 1;
+        _gameController.gamePhase = 1;
     }
 }

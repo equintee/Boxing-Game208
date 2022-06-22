@@ -9,6 +9,8 @@ public class trapController : MonoBehaviour
     public int operation; //0: +, 1: -, 2: x, 3: ÷
 
     [SerializeField]
+    private gameController _gameController;
+    [SerializeField]
     private TextMeshProUGUI _text;
     public void changeText()
     {
@@ -51,7 +53,7 @@ public class trapController : MonoBehaviour
         }
 
 
-        int playerLevel = gameController.playerLevel;
+        int playerLevel = _gameController.playerLevel;
 
         switch (operation)
         {
@@ -68,7 +70,7 @@ public class trapController : MonoBehaviour
                 playerLevel /= value;
                 break;
         }
-        gameController.playerLevel = playerLevel;
-        gameController.UpdateLevelText();
+        _gameController.playerLevel = playerLevel;
+        _gameController.UpdateLevelText();
     }
 }
