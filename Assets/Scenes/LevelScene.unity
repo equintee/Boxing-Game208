@@ -3133,7 +3133,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c60bd391d5fcfc49acd2600341897e1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelCount: 2
   canvasList:
     tapToStart: {fileID: 131513461}
     failCanvas: {fileID: 1086172012}
@@ -5131,8 +5130,8 @@ MonoBehaviour:
     horizantal: 0.35
     vertical: 20
   _bounceParameters:
-    bounceRate: 5
-    bounceTime: 1
+    bounceRate: 15
+    bounceTime: 1.5
   _levelManager: {fileID: 1409237457}
   endingButton: {fileID: 764859231}
   bossLevel: 0
