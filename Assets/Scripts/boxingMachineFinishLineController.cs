@@ -28,8 +28,6 @@ public class boxingMachineFinishLineController : MonoBehaviour
         _gameController.gameObjects.player.transform.DOLocalMoveY(-30.31f, 1f);
         await Task.Delay(System.TimeSpan.FromSeconds(1f));
 
-        //TODO: AFALLA????
-
         gameController.gamePhase = 1;
     }
 }

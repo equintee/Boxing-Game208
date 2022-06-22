@@ -19,7 +19,7 @@ public class boxingMachineBallRotation : MonoBehaviour
         if (!other.CompareTag("playerHand")) return;
         GetComponent<BoxCollider>().enabled = false;
         _boxingMachineController.hitParticle.Play();
-        Invoke("disableBoxingMachine", 3 * shakeTime);
+        //Invoke("disableBoxingMachine", 3 * shakeTime);
 
         if(gameController.playerLevel >= _boxingMachineController.value)
         {
