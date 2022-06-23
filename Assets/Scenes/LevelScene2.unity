@@ -590,7 +590,7 @@ MonoBehaviour:
   hitOffset: {x: 0, y: -2, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
   minValue: 15
-  maxValue: 25
+  maxValue: 24
   value: 15
   _boxingMachineValueText: {fileID: 1454787024}
   hitParticle: {fileID: 1180860221}
@@ -2264,8 +2264,8 @@ MonoBehaviour:
   _gameController: {fileID: 998631335}
   hitOffset: {x: 0, y: -2, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
-  minValue: 10
-  maxValue: 150
+  minValue: 2
+  maxValue: 50
   value: 15
   _boxingMachineValueText: {fileID: 446672863}
   hitParticle: {fileID: 2106448742}
@@ -2708,9 +2708,9 @@ MonoBehaviour:
   _gameController: {fileID: 998631335}
   hitOffset: {x: 0, y: -2, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
-  minValue: 25
-  maxValue: 100
-  value: 15
+  minValue: 30
+  maxValue: 31
+  value: 30
   _boxingMachineValueText: {fileID: 1707371630}
   hitParticle: {fileID: 512295887}
 --- !u!114 &571900013
@@ -3295,7 +3295,7 @@ MonoBehaviour:
   _gameController: {fileID: 998631335}
   hitOffset: {x: 0, y: -2, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
-  minValue: 10
+  minValue: 15
   maxValue: 15
   value: 15
   _boxingMachineValueText: {fileID: 1804871228}
@@ -4199,12 +4199,14 @@ MonoBehaviour:
   _bounceParameters:
     bounceRate: 15
     bounceTime: 1.5
+  _bossLevelParameters:
+    bossLevelMin: 40
+    bossLevelMax: 135
   _levelManager: {fileID: 190674394}
   endingButton: {fileID: 167734}
   bossLevel: 0
   bossHealth: 3
   playerFinishLineStandingPointOffset: {x: 0, y: -6, z: 8}
-  pathCreator: {fileID: 0}
   hitAnimationSpeed: 5
   isObjectStuck: 0
   playerWin: 0
@@ -5964,8 +5966,8 @@ MonoBehaviour:
   _gameController: {fileID: 998631335}
   hitOffset: {x: 0, y: -2, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
-  minValue: 10
-  maxValue: 150
+  minValue: 55
+  maxValue: 60
   value: 15
   _boxingMachineValueText: {fileID: 1038810381}
   hitParticle: {fileID: 7815725}
@@ -7418,16 +7420,16 @@ MonoBehaviour:
     maxAddition: 7
     minMultiplication: 2
     maxMultiplication: 4
-  - minAddition: 3
-    maxAddition: 7
+  - minAddition: 10
+    maxAddition: 15
     minMultiplication: 2
     maxMultiplication: 4
-  - minAddition: 2
-    maxAddition: 10
+  - minAddition: 10
+    maxAddition: 15
     minMultiplication: 2
     maxMultiplication: 3
-  - minAddition: 2
-    maxAddition: 10
+  - minAddition: 10
+    maxAddition: 12
     minMultiplication: 2
     maxMultiplication: 3
   - minAddition: 2
@@ -8088,8 +8090,8 @@ MonoBehaviour:
   _gameController: {fileID: 998631335}
   hitOffset: {x: 0, y: -2, z: 10}
   playerBoxingMachineStandingPointOfset: {x: 0, y: 0, z: 0}
-  minValue: 10
-  maxValue: 150
+  minValue: 60
+  maxValue: 70
   value: 15
   _boxingMachineValueText: {fileID: 611478312}
   hitParticle: {fileID: 1129382048}

@@ -22,14 +22,7 @@ public class levelManager : MonoBehaviour
     void Start()
     {
         Debug.Log("Level " + level.ToString() + " loaded.");
-        if (PlayerPrefs.HasKey("level"))
-        {
-            level = PlayerPrefs.GetInt("level");
-        }
-        else
-        {
-            PlayerPrefs.SetInt("level", 0);
-        }
+        level = SceneManager.GetActiveScene().buildIndex;
     }
 
     public void loadScene()
@@ -41,7 +34,6 @@ public class levelManager : MonoBehaviour
     {
         level++;
         level = level % SceneManager.sceneCountInBuildSettings;
-        PlayerPrefs.SetInt("level", level);
     }
 
     public void disableTapToStart()
