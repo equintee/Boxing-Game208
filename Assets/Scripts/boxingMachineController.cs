@@ -26,7 +26,7 @@ public class boxingMachineController : MonoBehaviour
         playerBoxingMachineStandingPointOfset = calculatePlayerBoxingMachineStandingPoint();
         Debug.Log(playerBoxingMachineStandingPointOfset.ToString());
 
-        _boxingMachineValueText.text = value.ToString();
+        _boxingMachineValueText.text = "<size=80%>" + value.ToString() + " <size=50%>lv";
     }
 
 

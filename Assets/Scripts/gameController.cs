@@ -26,7 +26,12 @@ public struct bounceParameters
     public float bounceRate;
     public float bounceTime;
 }
-
+[System.Serializable]
+public struct bossLevelParameters
+{
+    public int bossLevelMin;
+    public int bossLevelMax;
+}
 
 public class gameController : MonoBehaviour
 {
@@ -40,11 +45,15 @@ public class gameController : MonoBehaviour
     [SerializeField]
     public bounceParameters _bounceParameters;
     [SerializeField]
+    public bossLevelParameters _bossLevelParameters;
+    [SerializeField]
     private levelManager _levelManager;
     
     public GameObject endingButton;
 
+    [HideInInspector]
     public int bossLevel;
+
     public int bossHealth = 3;
     [SerializeField]
     private static TextMeshProUGUI _playerLevelText;
@@ -53,13 +62,12 @@ public class gameController : MonoBehaviour
     public Vector3 playerFinishLineStandingPointOffset;
     private Vector3 playerFinishLineStanding;
 
-    public PathCreator pathCreator;
     private void Start()
     {
         _playerLevelText = gameObjects.player.transform.Find("Canvas").transform.Find("Text (TMP)").GetComponent<TextMeshProUGUI>();
         UpdateLevelText();
 
-        bossLevel = Random.Range(1, 100);
+        bossLevel = Random.Range(_bossLevelParameters.bossLevelMin, _bossLevelParameters.bossLevelMax + 1);
         bossTextUpdater();
 
         playerFinishLineStanding = gameObjects.boss.transform.localPosition - playerFinishLineStandingPointOffset;
