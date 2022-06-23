@@ -452,7 +452,7 @@ MonoBehaviour:
   _gameController: {fileID: 998631335}
   _bossLevelCanvas: {fileID: 2068757120}
   _endingScreen: {fileID: 167734}
-  _levelManager: {fileID: 0}
+  _levelManager: {fileID: 190674394}
 --- !u!65 &50059846
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -8454,6 +8454,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4681938505685169142, guid: 27712303644ccf34d8e8e7fc56483752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 190674394}
+    - target: {fileID: 4681938505685169142, guid: 27712303644ccf34d8e8e7fc56483752,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: loadScene
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27712303644ccf34d8e8e7fc56483752, type: 3}
 --- !u!1 &7179264610641709305 stripped
@@ -8578,6 +8588,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: NextLevel(Canvas)
+      objectReference: {fileID: 0}
+    - target: {fileID: 7764000965902170061, guid: 5f6cacd115b450645aab67c801f71d28,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 190674394}
+    - target: {fileID: 7764000965902170061, guid: 5f6cacd115b450645aab67c801f71d28,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: loadScene
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f6cacd115b450645aab67c801f71d28, type: 3}

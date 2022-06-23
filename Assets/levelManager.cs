@@ -21,8 +21,8 @@ public class levelManager : MonoBehaviour
     private Menu canvasList;
     void Start()
     {
-        Debug.Log("Level " + level.ToString() + " loaded.");
         level = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("Level " + level.ToString() + " loaded.");
     }
 
     public void loadScene()
