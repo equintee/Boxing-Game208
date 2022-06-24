@@ -2140,88 +2140,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 722863638}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &725792310
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 725792313}
-  - component: {fileID: 725792312}
-  - component: {fileID: 725792311}
-  m_Layer: 0
-  m_Name: Boxing_Hand_Left(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &725792311
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725792310}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 8057639354319819834, guid: 7fe253a5e4f3a3545a07a924b1191a4a, type: 3}
-  - {fileID: -6629797300637803691, guid: 7fe253a5e4f3a3545a07a924b1191a4a, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &725792312
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725792310}
-  m_Mesh: {fileID: -342069413725825613, guid: 7fe253a5e4f3a3545a07a924b1191a4a, type: 3}
---- !u!4 &725792313
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725792310}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.017374476, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 11
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &764859231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2350,12 +2268,14 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dcae98877ece85b4793451f2f9d95f9c, type: 2}
+      objectReference: {fileID: 8057639354319819834, guid: c26b98932834ca8459f33a4dff8c74e9,
+        type: 3}
     - target: {fileID: 1339654375151216892, guid: 2a5cf1e82a1813345b4bb948f56db9b7,
         type: 3}
       propertyPath: m_Materials.Array.data[1]
       value: 
-      objectReference: {fileID: 2100000, guid: b76ca925c11d8f24f8438b311539a1a1, type: 2}
+      objectReference: {fileID: -6629797300637803691, guid: c26b98932834ca8459f33a4dff8c74e9,
+        type: 3}
     - target: {fileID: 2749377321645242320, guid: 2a5cf1e82a1813345b4bb948f56db9b7,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4987,88 +4907,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1817819370}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1871296733
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1871296736}
-  - component: {fileID: 1871296735}
-  - component: {fileID: 1871296734}
-  m_Layer: 0
-  m_Name: Boxing_Hand_Left(Clone)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!23 &1871296734
-MeshRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871296733}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
-  m_RayTraceProcedural: 0
-  m_RenderingLayerMask: 1
-  m_RendererPriority: 0
-  m_Materials:
-  - {fileID: 8057639354319819834, guid: 7fe253a5e4f3a3545a07a924b1191a4a, type: 3}
-  - {fileID: -6629797300637803691, guid: 7fe253a5e4f3a3545a07a924b1191a4a, type: 3}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_ReceiveGI: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 1
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
-  m_AdditionalVertexStreams: {fileID: 0}
---- !u!33 &1871296735
-MeshFilter:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871296733}
-  m_Mesh: {fileID: -342069413725825613, guid: 7fe253a5e4f3a3545a07a924b1191a4a, type: 3}
---- !u!4 &1871296736
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1871296733}
-  m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.017374476, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 10
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1959418967
 GameObject:
   m_ObjectHideFlags: 0
@@ -5322,15 +5160,23 @@ MonoBehaviour:
     bossLevelMax: 10
   _levelManager: {fileID: 1409237457}
   _levelMaterials:
+  - handMaterial: {fileID: 8057639354319819834, guid: c26b98932834ca8459f33a4dff8c74e9,
+      type: 3}
+    wristMaterial: {fileID: -6629797300637803691, guid: c26b98932834ca8459f33a4dff8c74e9,
+      type: 3}
+    minLevel: 1
   - handMaterial: {fileID: 2100000, guid: dcae98877ece85b4793451f2f9d95f9c, type: 2}
     wristMaterial: {fileID: 2100000, guid: b76ca925c11d8f24f8438b311539a1a1, type: 2}
-    minLevel: 0
+    minLevel: 20
   - handMaterial: {fileID: 2100000, guid: d499692c693225440a3384d866287971, type: 2}
     wristMaterial: {fileID: 2100000, guid: f73a5887fe933ad4f9500fa8436011d9, type: 2}
-    minLevel: 100
+    minLevel: 40
   - handMaterial: {fileID: 2100000, guid: d326d2e11b33e8d4b841b84fe1e04b73, type: 2}
     wristMaterial: {fileID: 2100000, guid: 89988a355b111844cb700abae84af318, type: 2}
-    minLevel: 10000
+    minLevel: 50
+  - handMaterial: {fileID: 2100000, guid: c74ac63925a157d439f0cdf72ddafc79, type: 2}
+    wristMaterial: {fileID: 2100000, guid: 489b9192ab1d44b43bc41fcff98e0da1, type: 2}
+    minLevel: 70
   endingButton: {fileID: 764859231}
   bossLevel: 0
   bossHealth: 3
