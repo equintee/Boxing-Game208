@@ -222,7 +222,7 @@ public class gameController : MonoBehaviour
 
         levelMaterials materialToChange = _levelMaterials[0];
 
-        for(int i = _levelMaterials.Count - 1; i>=0; i--)
+        for(int i = 0; _levelMaterials.Count > i; i++)
         {
             if(playerLevel < _levelMaterials[i].minLevel)
             {
