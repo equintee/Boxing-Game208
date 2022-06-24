@@ -8459,7 +8459,22 @@ MonoBehaviour:
     bossLevelMin: 75
     bossLevelMax: 150
   _levelManager: {fileID: 1409237457}
-  _levelMaterials: []
+  _levelMaterials:
+  - handMaterial: {fileID: 2100000, guid: 0363a96dfc9e9b449964e712244519d4, type: 2}
+    wristMaterial: {fileID: 2100000, guid: a18fc726492784a478a71bb057e2d37a, type: 2}
+    minLevel: 1
+  - handMaterial: {fileID: 2100000, guid: dcae98877ece85b4793451f2f9d95f9c, type: 2}
+    wristMaterial: {fileID: 2100000, guid: b76ca925c11d8f24f8438b311539a1a1, type: 2}
+    minLevel: 20
+  - handMaterial: {fileID: 2100000, guid: d499692c693225440a3384d866287971, type: 2}
+    wristMaterial: {fileID: 2100000, guid: f73a5887fe933ad4f9500fa8436011d9, type: 2}
+    minLevel: 50
+  - handMaterial: {fileID: 2100000, guid: d326d2e11b33e8d4b841b84fe1e04b73, type: 2}
+    wristMaterial: {fileID: 2100000, guid: 89988a355b111844cb700abae84af318, type: 2}
+    minLevel: 90
+  - handMaterial: {fileID: 2100000, guid: c74ac63925a157d439f0cdf72ddafc79, type: 2}
+    wristMaterial: {fileID: 2100000, guid: 489b9192ab1d44b43bc41fcff98e0da1, type: 2}
+    minLevel: 120
   endingButton: {fileID: 764859231}
   bossLevel: 0
   bossHealth: 3

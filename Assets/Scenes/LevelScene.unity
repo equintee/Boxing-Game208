@@ -1576,7 +1576,7 @@ RectTransform:
   m_GameObject: {fileID: 640542382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.5, y: 4.5, z: 4.5}
+  m_LocalScale: {x: 4.5, y: 19, z: 4.5}
   m_Children: []
   m_Father: {fileID: 713275820}
   m_RootOrder: 0
@@ -4018,20 +4018,20 @@ MonoBehaviour:
   _boundries:
   - minAddition: 3
     maxAddition: 10
-    minMultiplication: 3
-    maxMultiplication: 10
+    minMultiplication: 5
+    maxMultiplication: 5
   - minAddition: 5
     maxAddition: 15
-    minMultiplication: 5
-    maxMultiplication: 7
+    minMultiplication: 4
+    maxMultiplication: 5
   - minAddition: 3
     maxAddition: 7
     minMultiplication: 3
-    maxMultiplication: 8
+    maxMultiplication: 4
   - minAddition: 2
     maxAddition: 10
-    minMultiplication: 8
-    maxMultiplication: 12
+    minMultiplication: 3
+    maxMultiplication: 4
   negativeMaterial: {fileID: 2100000, guid: 07e54f59630ed924eb8e75b9897d8b0a, type: 2}
 --- !u!4 &1624508499
 Transform:
@@ -5156,8 +5156,8 @@ MonoBehaviour:
     bounceRate: 15
     bounceTime: 1.5
   _bossLevelParameters:
-    bossLevelMin: 1
-    bossLevelMax: 10
+    bossLevelMin: 10
+    bossLevelMax: 25
   _levelManager: {fileID: 1409237457}
   _levelMaterials:
   - handMaterial: {fileID: 2100000, guid: 0363a96dfc9e9b449964e712244519d4, type: 2}
@@ -5165,16 +5165,16 @@ MonoBehaviour:
     minLevel: 1
   - handMaterial: {fileID: 2100000, guid: dcae98877ece85b4793451f2f9d95f9c, type: 2}
     wristMaterial: {fileID: 2100000, guid: b76ca925c11d8f24f8438b311539a1a1, type: 2}
-    minLevel: 20
+    minLevel: 9
   - handMaterial: {fileID: 2100000, guid: d499692c693225440a3384d866287971, type: 2}
     wristMaterial: {fileID: 2100000, guid: f73a5887fe933ad4f9500fa8436011d9, type: 2}
-    minLevel: 40
+    minLevel: 19
   - handMaterial: {fileID: 2100000, guid: d326d2e11b33e8d4b841b84fe1e04b73, type: 2}
     wristMaterial: {fileID: 2100000, guid: 89988a355b111844cb700abae84af318, type: 2}
-    minLevel: 50
+    minLevel: 29
   - handMaterial: {fileID: 2100000, guid: c74ac63925a157d439f0cdf72ddafc79, type: 2}
     wristMaterial: {fileID: 2100000, guid: 489b9192ab1d44b43bc41fcff98e0da1, type: 2}
-    minLevel: 70
+    minLevel: 45
   endingButton: {fileID: 764859231}
   bossLevel: 0
   bossHealth: 3
