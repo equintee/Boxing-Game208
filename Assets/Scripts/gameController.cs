@@ -95,7 +95,7 @@ public class gameController : MonoBehaviour
         Debug.Log("Player has " + coin.ToString() + " coins.");
 
         levelMaterials _temp = _levelMaterials[0];
-        _temp.minLevel = 0;
+        _temp.minLevel = 1;
         _levelMaterials[0] = _temp;
 
         changeSkin();
@@ -222,9 +222,9 @@ public class gameController : MonoBehaviour
 
         levelMaterials materialToChange = _levelMaterials[0];
 
-        for(int i = 0; _levelMaterials.Count > i; i++)
+        for(int i = _levelMaterials.Count - 1; i>=0; i--)
         {
-            if(playerLevel < _levelMaterials[i].minLevel)
+            if(playerLevel > _levelMaterials[i].minLevel)
             {
                 materialToChange = _levelMaterials[i];
                 if (skinIndex == i)
