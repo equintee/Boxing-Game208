@@ -216,26 +216,24 @@ public class gameController : MonoBehaviour
     }
 
     private int skinIndex = 0;
-    public void changeSkin()
+    public async void changeSkin()
     {
         GameObject[] hands = GameObject.FindGameObjectsWithTag("playerHand");
-
+        bool levelUp = false;
         levelMaterials materialToChange = _levelMaterials[0];
 
         for(int i = _levelMaterials.Count - 1; i>=0; i--)
         {
-            if(playerLevel > _levelMaterials[i].minLevel)
+            if(playerLevel > _levelMaterials[i].minLevel && i != skinIndex)
             {
                 materialToChange = _levelMaterials[i];
-                if (skinIndex == i)
-                {
-                    Debug.Log("No level up");
-                    return;
-                }
-                else skinIndex = i;
+                skinIndex = i;
+                levelUp = true;
                 break;
             }
         }
+
+        if (!levelUp) return;
 
         foreach(GameObject hand in hands)
         {
@@ -245,8 +243,11 @@ public class gameController : MonoBehaviour
             tempMaterials[0] = materialToChange.handMaterial;
             tempMaterials[1] = materialToChange.wristMaterial;
 
+            hand.transform.parent.GetComponent<Animator>().SetTrigger("levelUp");
+
             handMesh.materials = tempMaterials;
         }
+
     }
 
 }   
