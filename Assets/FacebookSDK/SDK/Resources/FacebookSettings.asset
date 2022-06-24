@@ -16,9 +16,9 @@ MonoBehaviour:
   clientTokens:
   - 
   appIds:
-  - 0
+  - 736125831047984
   appLabels:
-  - App Name
+  - Boxing Runner
   cookie: 1
   logging: 1
   status: 1

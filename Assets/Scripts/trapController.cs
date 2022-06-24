@@ -71,6 +71,7 @@ public class trapController : MonoBehaviour
                 break;
         }
         _gameController.playerLevel = playerLevel;
+        _gameController.changeSkin();
         _gameController.UpdateLevelText();
     }
 }

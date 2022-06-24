@@ -33,6 +33,14 @@ public struct bossLevelParameters
     public int bossLevelMax;
 }
 
+[System.Serializable]
+public struct levelMaterials
+{
+    public Material handMaterial;
+    public Material wristMaterial;
+    public int minLevel;
+}
+
 public class gameController : MonoBehaviour
 {
     public int gamePhase = 0; //0 game initialization, 1 gameplay, 2 boss fight
@@ -48,8 +56,12 @@ public class gameController : MonoBehaviour
     public bossLevelParameters _bossLevelParameters;
     [SerializeField]
     private levelManager _levelManager;
+
+    [SerializeField]
+    private List<levelMaterials> _levelMaterials;
     
     public GameObject endingButton;
+
 
     [HideInInspector]
     public int bossLevel;
@@ -81,6 +93,14 @@ public class gameController : MonoBehaviour
             PlayerPrefs.SetInt("coin", 0);
         }
         Debug.Log("Player has " + coin.ToString() + " coins.");
+
+        levelMaterials _temp = _levelMaterials[0];
+        _temp.minLevel = 0;
+        _levelMaterials[0] = _temp;
+
+        changeSkin();
+
+
 
     }
 
@@ -194,4 +214,39 @@ public class gameController : MonoBehaviour
             gamePhase++;
         }
     }
+
+    private int skinIndex = 0;
+    public void changeSkin()
+    {
+        GameObject[] hands = GameObject.FindGameObjectsWithTag("playerHand");
+
+        levelMaterials materialToChange = _levelMaterials[0];
+
+        for(int i = _levelMaterials.Count - 1; i>=0; i--)
+        {
+            if(playerLevel < _levelMaterials[i].minLevel)
+            {
+                materialToChange = _levelMaterials[i];
+                if (skinIndex == i)
+                {
+                    Debug.Log("No level up");
+                    return;
+                }
+                else skinIndex = i;
+                break;
+            }
+        }
+
+        foreach(GameObject hand in hands)
+        {
+            MeshRenderer handMesh = hand.GetComponent<MeshRenderer>();
+            Material[] tempMaterials = handMesh.materials;
+
+            tempMaterials[0] = materialToChange.handMaterial;
+            tempMaterials[1] = materialToChange.wristMaterial;
+
+            handMesh.materials = tempMaterials;
+        }
+    }
+
 }   
