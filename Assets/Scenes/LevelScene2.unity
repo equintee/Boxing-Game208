@@ -491,7 +491,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: eee6a5e9d2cbfb740b87a7bb2b214cbb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: 7.2
+      value: 10.5
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eee6a5e9d2cbfb740b87a7bb2b214cbb,
         type: 3}
@@ -1368,7 +1368,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 248498837}
   m_LocalRotation: {x: -0.000000011175872, y: 0.7071068, z: 0.000000014901163, w: 0.7071068}
-  m_LocalPosition: {x: 70.84, y: -29.100727, z: 293.1}
+  m_LocalPosition: {x: 70.84, y: -29.100727, z: 281.5}
   m_LocalScale: {x: 0.010068111, y: 3.3899999, z: 13.410003}
   m_Children: []
   m_Father: {fileID: 231258484}
@@ -2043,15 +2043,15 @@ RectTransform:
   m_GameObject: {fileID: 468607650}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.97863746, y: 1.1512691, z: 0.97863746}
   m_Children: []
   m_Father: {fileID: 1386034047}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.2665185, y: 0.0567265}
-  m_AnchorMax: {x: 0.736148, y: 0.15185471}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchorMin: {x: 0.273, y: 0.049272403}
+  m_AnchorMax: {x: 0.73160416, y: 0.1584552}
+  m_AnchoredPosition: {x: -1.5, y: 1.5}
+  m_SizeDelta: {x: 21, y: -39}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &468607652
 MonoBehaviour:
@@ -3203,7 +3203,7 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: eee6a5e9d2cbfb740b87a7bb2b214cbb,
         type: 3}
       propertyPath: m_LocalPosition.z
-      value: -22.8
+      value: -19.2
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: eee6a5e9d2cbfb740b87a7bb2b214cbb,
         type: 3}
@@ -4200,14 +4200,14 @@ MonoBehaviour:
     player: {fileID: 567096389}
     boss: {fileID: 1368890692}
   speedParameters:
-    horizantal: 0.35
+    horizantal: 0.4
     vertical: 20
   _bounceParameters:
     bounceRate: 15
     bounceTime: 1.5
   _bossLevelParameters:
-    bossLevelMin: 40
-    bossLevelMax: 135
+    bossLevelMin: 50
+    bossLevelMax: 125
   _levelManager: {fileID: 190674394}
   _levelMaterials:
   - handMaterial: {fileID: 8057639354319819834, guid: c26b98932834ca8459f33a4dff8c74e9,
@@ -4217,16 +4217,16 @@ MonoBehaviour:
     minLevel: 1
   - handMaterial: {fileID: 2100000, guid: dcae98877ece85b4793451f2f9d95f9c, type: 2}
     wristMaterial: {fileID: 2100000, guid: b76ca925c11d8f24f8438b311539a1a1, type: 2}
-    minLevel: 9
+    minLevel: 15
   - handMaterial: {fileID: 2100000, guid: d499692c693225440a3384d866287971, type: 2}
     wristMaterial: {fileID: 2100000, guid: f73a5887fe933ad4f9500fa8436011d9, type: 2}
-    minLevel: 19
+    minLevel: 35
   - handMaterial: {fileID: 2100000, guid: d326d2e11b33e8d4b841b84fe1e04b73, type: 2}
     wristMaterial: {fileID: 2100000, guid: 89988a355b111844cb700abae84af318, type: 2}
-    minLevel: 29
+    minLevel: 45
   - handMaterial: {fileID: 2100000, guid: c74ac63925a157d439f0cdf72ddafc79, type: 2}
     wristMaterial: {fileID: 2100000, guid: 489b9192ab1d44b43bc41fcff98e0da1, type: 2}
-    minLevel: 39
+    minLevel: 59
   endingButton: {fileID: 167734}
   bossLevel: 0
   bossHealth: 3
